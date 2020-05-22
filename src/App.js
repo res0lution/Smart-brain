@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Clarifai from "clarifai";
+import Particles from "react-particles-js";
 import "tachyons";
 
 import "./App.css";
@@ -7,13 +8,12 @@ import Navigation from "./components/Navigation/Navigation";
 import Logo from "./components/Logo/Logo";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
-import Particles from "react-particles-js";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import Signin from "./components/Signin/Signin";
 import Register from "./components/Register/Register";
 
 const app = new Clarifai.App({
-  apiKey: "",
+  apiKey: "fcdff6d7a1b34197bb21d8bef3796610",
 });
 
 function App() {
@@ -39,6 +39,12 @@ function App() {
       bottomRow: height - clarifaiFace.bottom_row * height,
     };
   };
+
+  useEffect(() => {
+    fetch("http://localhost:3000").then(
+      response => response.json()
+    ).then().catch()
+  }, [])
 
   const displayFaceBox = (data) => {
     setBox(data);
