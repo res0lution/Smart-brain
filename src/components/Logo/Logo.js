@@ -2,7 +2,7 @@ import React from "react";
 import Tilt from "react-tilt";
 
 import brain from "./brain.png";
-import "./Logo.css"
+import "./Logo.css";
 
 const Logo = () => {
   return (
@@ -10,10 +10,10 @@ const Logo = () => {
       <Tilt
         className="Tilt br2 shadow-2"
         options={{ max: 55 }}
-        style={{ width: 120, height: 120 }}
+        style={{ height: 150, width: 150 }}
       >
-        <div className="Tilt-inner pa-3">
-          <img style={{ paddingTop: "5px" }} src={brain} alt="Logo" />
+        <div className="Tilt-inner pa3">
+          <img style={{ paddingTop: "5px" }} alt="logo" src={brain} />
         </div>
       </Tilt>
     </div>
